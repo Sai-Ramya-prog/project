@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 40px;
+}
+
+.container {
+  width: 400px;
+  margin: auto;
+  border: 1px solid #ccc;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid rgb(245, 21, 21);
+  border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #777;
+}
+
+.error {
+  color: crimson;
+  font-size: 13px;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  padding: 8px 20px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form id="regForm" onsubmit="return validateForm()">
+      <label>Name:</label>
+      <input type="text" id="name">
+      <span class="error" id="nameError"></span>
+
+      <label>Email:</label>
+      <input type="text" id="email">
+      <span class="error" id="emailError"></span>
+
+      <label>Website:</label>
+      <input type="text" id="website">
+      <span class="error" id="websiteError"></span>
+
+      <label>Message:</label>
+      <textarea id="message"></textarea>
+      <span class="error" id="messageError"></span>
+
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script src="js/script24.js"></script>
+</body>
+</html>

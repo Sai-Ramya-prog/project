@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Appointment Form</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="left">
+      <img src="images/image4.png" alt="Doctor Image">
+    </div>
+
+    <div class="right">
+      <h1>Doctor Appointment Form</h1>
+      <form>
+        <label>Appointment Date</label>
+        <input type="date">
+
+        <label>Appointment Time</label>
+        <input type="time">
+
+        <label>Name</label>
+        <div class="name-group">
+          <input type="text" placeholder="First">
+          <input type="text" placeholder="Last">
+        </div>
+
+        <label>Gender</label>
+        <div class="gender-group">
+          <input type="radio" name="gender"> Male
+          <input type="radio" name="gender"> Female
+        </div>
+
+        <label>Phone</label>
+        <input type="tel" placeholder="####">
+
+        <label>Address</label>
+        <div class="address-group">
+          <input type="text" placeholder="City">
+          <input type="text" placeholder="State">
+        </div>
+
+        <label>Your Query</label>
+        <textarea></textarea>
+
+        <label>Appointment Type</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Cervix checkup</label><br>
+          <label><input type="checkbox"> Heart checkup</label><br>
+          <label><input type="checkbox"> Eye check-up</label><br>
+          <label><input type="checkbox"> Hearing Test</label>
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

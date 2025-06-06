@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Calculator</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #8e44ad;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.input-section {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+input[type="date"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background: #9b59b6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.output-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.box {
+  background: white;
+  color: black;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.box p {
+  font-size: 32px;
+  margin: 0;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AGE CALCULATOR</h1>
+    <div class="input-section">
+      <input type="date" id="dob">
+      <button onclick="calculateAge()">Calculate</button>
+    </div>
+    <div class="output-section">
+      <div class="box">
+        <p id="year">0</p>
+        <span>YEAR</span>
+      </div>
+      <div class="box">
+        <p id="month">0</p>
+        <span>MONTH</span>
+      </div>
+      <div class="box">
+        <p id="day">0</p>
+        <span>DAY</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script28.js"></script>
+</body>
+</html>

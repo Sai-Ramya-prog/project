@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Marquee with Static Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .image-marquee-container {
+            width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .image-marquee {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+
+        .image-marquee img {
+            height: 200px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .content-text {
+            margin-top: 30px;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image in Marquee</h1>
+        <div class="content-text">
+            <p>Of the insert tab, the galleries include items that are designed to coordinate with the overall look of
+                your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and
+                other document building blocks. When you create pictures, charts, or diagrams, they also coordinate with
+                your current document look. You can assign a change to the formatting of selected text in the document
+                text by choosing a look for the selected text from the Quick Style gallery on the table. You can also
+                form a text directly by using other content on the table. Most content do refer a choice of using the
+                look from the current theme or using a format from the speech director. To change the overall look of
+                your document, choose new Theme elements on the Page Layout tab. To change
+                the looks available in the Quick Style gallery, use the Change Current Quick Style set command. Both the
+                Themes gallery and the Quick Style gallery provide text commands so that you can always restore the look
+                of your document to the original contained in your current template.</p>
+        </div>
+        <div class="image-marquee-container">
+            <div class="image-marquee">
+                <!-- Replace these with your actual images -->
+                <img src="images/image2.png" alt="Sample Image 1">
+                <img src="images/image2.png" alt="Sample Image 2">
+                <img src="images/image2.png" alt="Sample Image 3">
+                <img src="images/image2.png" alt="Sample Image 4">
+                <!-- Duplicate images for seamless looping -->
+                <img src="images/image2.png" alt="Sample Image 1">
+                <img src="images/image2.png" alt="Sample Image 2">
+                <img src="images/image2.png" alt="Sample Image 3">
+                <img src="images/image2.png" alt="Sample Image 4">
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

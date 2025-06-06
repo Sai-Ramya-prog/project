@@ -1,0 +1,38 @@
+1. How to set justify property in the paragraph elements?
+Ans:
+Use the text-align property with the value justify:
+
+css:
+p {
+  text-align: justify;
+}
+This will make the text in all <p> elements align evenly on both left and right sides.
+
+
+2. How to add shadow to text?
+Use the text-shadow property:
+
+css:
+h1 {
+  text-shadow: 2px 2px 4px gray;
+}
+Format: text-shadow: horizontal-offset vertical-offset blur-radius color;
+
+3. How to specify all the font properties in one declaration?
+Use the font shorthand property:
+
+
+css:
+
+p {
+  font: italic small-caps bold 16px/1.5 Arial, sans-serif;
+}
+Format: font: [style] [variant] [weight] [size]/[line-height] [family];
+
+Example (simpler):
+
+css:
+p {
+  font: 16px Arial, sans-serif;
+}
+Let me know if you'd like examples applied in an HTML page.

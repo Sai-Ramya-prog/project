@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number Generator</title>
+  <style>
+    body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  color: black;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 20px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #222;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Prime Number Generator</h2>
+    <table>
+      <tr>
+        <td>Start</td>
+        <td><input type="number" id="start" /></td>
+      </tr>
+      <tr>
+        <td>End</td>
+        <td><input type="number" id="end" /></td>
+      </tr>
+      <tr>
+        <td>Prime Number</td>
+        <td><textarea id="result" rows="5" cols="30" readonly></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <button onclick="generatePrimes()">Generate</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="js/script27.js"></script>
+</body>
+</html>

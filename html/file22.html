@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Tasks Output</title>
+</head>
+<body>
+  <h2>JavaScript Outputs</h2>
+  <div id="output"></div>
+
+  <script>
+    const outputDiv = document.getElementById('output');
+
+    // 1) Positive or Negative
+    let num = parseFloat(prompt("Enter a number:"));
+    if (num > 0) {
+      outputDiv.innerHTML += `<p>The number ${num} is <strong>Positive</strong>.</p>`;
+    } else if (num < 0) {
+      outputDiv.innerHTML += `<p>The number ${num} is <strong>Negative</strong>.</p>`;
+    } else {
+      outputDiv.innerHTML += `<p>The number is <strong>Zero</strong>.</p>`;
+    }
+
+    // 2) Marks to Grade
+    let marks = parseInt(prompt("Enter marks (1-100):"));
+    let grade = '';
+    switch (true) {
+      case (marks >= 90 && marks <= 100):
+        grade = 'A';
+        break;
+      case (marks >= 70 && marks < 90):
+        grade = 'B';
+        break;
+      case (marks >= 50 && marks < 70):
+        grade = 'C';
+        break;
+      case (marks >= 0 && marks < 50):
+        grade = 'D';
+        break;
+      default:
+        grade = 'Invalid';
+    }
+    outputDiv.innerHTML += `<p>Marks: ${marks} → Grade: <strong>${grade}</strong></p>`;
+
+    // 3) Repeat String
+    let times = parseInt(prompt("How many times do you want to repeat the string?"));
+    let str = prompt("Enter the string to repeat:");
+    outputDiv.innerHTML += `<p>Repeating "<strong>${str}</strong>" ${times} times:</p>`;
+    for (let i = 0; i < times; i++) {
+      outputDiv.innerHTML += `${str}<br>`;
+    }
+  </script>
+</body>
+</html>

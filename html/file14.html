@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Bullet List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .star-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 50px;
+            line-height: 1.6;
+        }
+
+        .star-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .star-list li::before {
+            content: "★";
+            color: #ff0000;
+            font-size: 16px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul class="star-list">
+        <li>Hummus</li>
+        <li>Pita</li>
+        <li>Green salad</li>
+        <li>Halloumi</li>
+    </ul>
+</body>
+</html>

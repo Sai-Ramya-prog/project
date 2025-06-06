@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoverable Sidenav Buttons</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidenav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 80px;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .sidenav:hover {
+            width: 250px;
+        }
+
+        .nav-button {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+        }
+
+        .nav-button:hover {
+            transform: translateX(5px);
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-color {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .green { background: linear-gradient(135deg, #4CAF50, #45a049); }
+        .blue { background: linear-gradient(135deg, #2196F3, #1976D2); }
+        .red { background: linear-gradient(135deg, #f44336, #d32f2f); }
+        .gray { background: linear-gradient(135deg, #666666, #424242); }
+
+        .button-content {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            color: #333;
+        }
+
+        .sidenav:hover .button-content {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .button-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .button-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .main-content {
+            margin-left: 80px;
+            padding: 40px;
+            width: calc(100% - 80px);
+            transition: margin-left 0.3s ease;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        .demo-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .demo-description {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .color-samples {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .color-sample {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Icons using CSS */
+        .icon-home::before { content: "🏠"; }
+        .icon-user::before { content: "👤"; }
+        .icon-settings::before { content: "⚙️"; }
+        .icon-info::before { content: "ℹ️"; }
+
+        @media (max-width: 768px) {
+            .sidenav {
+                width: 60px;
+            }
+            
+            .sidenav:hover {
+                width: 200px;
+            }
+            
+            .main-content {
+                margin-left: 60px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidenav">
+        <div class="nav-button" onclick="navigateTo('home')">
+            <div class="button-color green">
+                <span class="icon-home"></span>
+            </div>
+            <div class="button-content">
+                <div class="button-title">Home</div>
+                <div class="button-description">Dashboard and overview</div>
+            </div>
+        </div>
+
+        <div class="nav-button" onclick="navigateTo('profile')">
+            <div class="button-color blue">
+                <span class="icon-user"></span>
+            </div>
+            <div class="button-content">
+                <div class="button-title">Profile</div>
+                <div class="button-description">User account settings</div>
+            </div>
+        </div>
+
+        <div class="nav-button" onclick="navigateTo('settings')">
+            <div class="button-color red">
+                <span class="icon-settings"></span>
+            </div>
+            <div class="button-content">
+                <div class="button-title">Settings</div>
+                <div class="button-description">Application preferences</div>
+            </div>
+        </div>
+
+        <div class="nav-button" onclick="navigateTo('about')">
+            <div class="button-color gray">
+                <span class="icon-info"></span>
+            </div>
+            <div class="button-content">
+                <div class="button-title">About</div>
+                <div class="button-description">Information and help</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="demo-section">
+            <h1 class="demo-title">Hoverable Sidenav Buttons</h1>
+            <p class="demo-description">
+                Hover over the buttons in the left side navigation to open them. 
+                The navigation expands smoothly to reveal button titles and descriptions.
+                Each button has a unique color and can be clicked to navigate to different sections.
+            </p>
+            
+            <h3 style="margin-top: 30px; margin-bottom: 15px; color: #333;">Color Scheme:</h3>
+            <div class="color-samples">
+                <div class="color-sample green">🏠</div>
+                <div class="color-sample blue">👤</div>
+                <div class="color-sample red">⚙️</div>
+                <div class="color-sample gray">ℹ️</div>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                <strong>Try it out:</strong> Move your mouse over the colored buttons on the left to see the expansion effect in action!
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function navigateTo(section) {
+            // Update main content based on selection
+            const mainContent = document.querySelector('.demo-section');
+            
+            const content = {
+                home: {
+                    title: 'Home Dashboard',
+                    description: 'Welcome to your dashboard! Here you can see an overview of all your activities and quick access to important features.'
+                },
+                profile: {
+                    title: 'User Profile',
+                    description: 'Manage your personal information, change your password, and update your account preferences here.'
+                },
+                settings: {
+                    title: 'Application Settings',
+                    description: 'Configure application preferences, themes, notifications, and other customizable options.'
+                },
+                about: {
+                    title: 'About & Help',
+                    description: 'Learn more about this application, access help documentation, and find contact information.'
+                }
+            };
+
+            if (content[section]) {
+                mainContent.innerHTML = `
+                    <h1 class="demo-title">${content[section].title}</h1>
+                    <p class="demo-description">${content[section].description}</p>
+                    <div style="margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 8px;">
+                        <strong>Navigation successful!</strong> You clicked on the ${section} button. 
+                        In a real application, this would load the ${section} page content.
+                    </div>
+                    <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        Back to Demo
+                    </button>
+                `;
+            }
+        }
+
+        // Add some interactive feedback
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>

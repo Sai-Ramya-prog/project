@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Methods Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #0077cc;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-left: 4px solid #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript String, Array, and Function Methods</h1>
+
+  <div class="section" id="string-section">
+    <h2>String Methods</h2>
+    <pre id="string-output"></pre>
+  </div>
+
+  <div class="section" id="array-section">
+    <h2>Array Methods</h2>
+    <pre id="array-output"></pre>
+  </div>
+
+  <div class="section" id="function-section">
+    <h2>Function Example</h2>
+    <pre id="function-output"></pre>
+  </div>
+
+  <script>
+    // String Methods
+    let str = " Hello JavaScript ";
+    let stringOutput = "";
+    stringOutput += `Original: "${str}"\n`;
+    stringOutput += `Trim: "${str.trim()}"\n`;
+    stringOutput += `Length: ${str.length}\n`;
+    stringOutput += `Uppercase: ${str.toUpperCase()}\n`;
+    stringOutput += `Includes "Java": ${str.includes("Java")}\n`;
+    stringOutput += `Index of "Script": ${str.indexOf("Script")}\n`;
+    stringOutput += `Slice(1,6): "${str.slice(1,6)}"\n`;
+    stringOutput += `Replace "JavaScript" with "World": "${str.replace("JavaScript", "World")}"\n`;
+
+    document.getElementById("string-output").textContent = stringOutput;
+
+    // Array Methods
+    let arr = [10, 20, 30, 40];
+    let arrayOutput = "";
+    arrayOutput += `Original: [${arr}]\n`;
+    arr.push(50);
+    arrayOutput += `After push(50): [${arr}]\n`;
+    arr.pop();
+    arrayOutput += `After pop(): [${arr}]\n`;
+    arr.shift();
+    arrayOutput += `After shift(): [${arr}]\n`;
+    arr.unshift(5);
+    arrayOutput += `After unshift(5): [${arr}]\n`;
+    arrayOutput += `map (x2): [${arr.map(x => x * 2)}]\n`;
+    arrayOutput += `filter (>20): [${arr.filter(x => x > 20)}]\n`;
+    arrayOutput += `reduce (sum): ${arr.reduce((a, b) => a + b)}\n`;
+
+    document.getElementById("array-output").textContent = arrayOutput;
+
+    // Function Example
+    function greet(name = "Guest") {
+      return `Hello, ${name}!`;
+    }
+
+    const add = (a, b) => a + b;
+
+    let functionOutput = "";
+    functionOutput += greet("Sairaj") + "\n";
+    functionOutput += `add(5, 10) = ${add(5, 10)}\n`;
+
+    function demoArguments() {
+      return `First arg is: ${arguments[0]}`;
+    }
+
+    functionOutput += demoArguments("JS", "HTML", "CSS");
+
+    document.getElementById("function-output").textContent = functionOutput;
+  </script>
+</body>
+</html>
